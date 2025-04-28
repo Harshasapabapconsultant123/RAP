@@ -1,0 +1,661 @@
+<mvc:View xmlns:tools="sap.ui.vk.tools" controllerName="gangmaintainance.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"  xmlns:core="sap.ui.core"
+	 xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" >
+   <App id="app">
+   <pages>
+    <Page id="page"  title="{i18n>title}" class="custombar1" >
+	<!-- <Title text="Gang Id Search" width="100%" class="title"></Title> -->
+    <content >
+	 
+
+    <IconTabBar class="iconbar" >
+		<items >
+			<IconTabFilter text="Gang ID Responsive" key="Gang ID" >
+			<Bar class="custombar2">   
+			<contentLeft >
+			<Label text="Gang ID"/>
+			         <SearchField width="30%"></SearchField>
+					 </contentLeft>
+			</Bar>
+			
+<Table id="tableid" items="{gang>/results}" class="customtable" inset="false" 
+ mode="SingleSelectLeft"  selectionChange="onSelectionChange"
+ >
+
+<columns >
+<Column >
+<Label text="Gangid" design="Bold"/>
+</Column>
+<Column>
+<Label text="Description" design="Bold"/>
+</Column>
+ 
+<Column>
+<Label text="Supervisor" design="Bold"/>
+</Column>
+
+<Column>
+<Label text="Division engineer" design="Bold"/>
+</Column>
+
+<Column>
+<Label text="City" design="Bold"/>
+</Column>
+
+<Column>
+<Label text="State" design="Bold"/>
+</Column>
+
+<Column>
+<Label text="Division" design="Bold"/>
+</Column>
+
+
+<Column>
+<Label text="Position" design="Bold"/>
+</Column>
+
+
+<Column>
+<Label text=" " design="Bold"/>
+</Column>
+</columns>
+
+ 
+<items >
+<ColumnListItem >
+<cells >
+<HBox >
+
+<Input value="{gang>Gangid}" visible="{gang>inputvisible}"></Input>
+<Text text="{gang>Gangid}" visible="{gang>textvisible}"></Text>
+</HBox>
+
+<HBox >
+
+<Input value="{gang>Description}" visible="{gang>inputvisible}"></Input>
+<Text text="{gang>Description}" visible="{gang>textvisible}"></Text>
+</HBox>
+
+
+<HBox>
+    <ComboBox id="select"
+        items="{gang>/results}" 
+        selectedKey="{gang>Assignedsupervisor}" 
+        visible="{gang>inputvisible}" selectionChange="onsc"
+    
+        width="100%">
+        <core:Item key="{gang>Assignedsupervisor}" text="{gang>Assignedsupervisor}" />
+    </ComboBox>
+    <Text text="{gang>Assignedsupervisor}" visible="{gang>textvisible}" />
+</HBox>
+<HBox >
+
+<Input value="{gang>Divisionengineer}" visible="{gang>inputvisible}"></Input>
+<Text text="{gang>Divisionengineer}" visible="{gang>textvisible}"></Text>
+</HBox>
+<HBox >
+
+<Input value="{gang>City}" visible="{gang>inputvisible}"></Input>
+<Text text="{gang>City}" visible="{gang>textvisible}"></Text>
+</HBox>
+<HBox >
+
+<Input value="{gang>State}" visible="{gang>inputvisible}"></Input>
+<Text text="{gang>State}" visible="{gang>textvisible}"></Text>
+</HBox><HBox >
+
+<Input value="{gang>Division}" visible="{gang>inputvisible}"></Input>
+<Text text="{gang>Division}" visible="{gang>textvisible}"></Text>
+</HBox>
+<HBox >
+
+<Input value="{gang>Positionn}" visible="{gang>inputvisible}"></Input>
+<Text text="{gang>Positionn}" visible="{gang>textvisible}"></Text>
+</HBox>
+
+<HBox >
+<Button  icon="sap-icon://edit" press="onpress"></Button>
+<Button  icon="sap-icon://save" press="onsave"></Button>
+</HBox>
+</cells>
+</ColumnListItem>
+</items>
+</Table>
+			</IconTabFilter>
+			<IconTabFilter text="Description" key="Description">
+            
+<f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="5" labelSpanS="8" editable="true" columnsL="3" columnsM="2" columnsXL="3"
+				 emptySpanL="0" emptySpanM="0"  emptySpanS="0" adjustLabelSpan="true" >
+  <core:Title />         
+		<Label text="Gang   Description" required="true">
+		  <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+</Label>
+<TextArea placeholder="Enter Gang Description" value="{fgang>/Description}">
+
+
+</TextArea>
+<Label text="Gang Id" required="true">
+<layoutData>
+        <l:GridData span="XL7 L4 M6 S8"/>
+    </layoutData>
+  </Label>
+  <Input value="{fgang>/Gangid}">
+  
+  
+  </Input>
+
+
+  <Label text="StartUp Date">
+  <layoutData>
+        <l:GridData span="XL4 L4 M4 S4"/>
+    </layoutData> 
+  
+  </Label>
+
+       <DatePicker  editable="false">
+
+       </DatePicker>
+<Label text="Gang Classification"  >
+		  <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+</Label>
+<RadioButtonGroup>
+                <buttons>
+                    <RadioButton text="Fixed Headquarter" enabled="true"/>
+                    <RadioButton text="Mobile"/>
+                </buttons>
+    <layoutData>
+        <l:GridData span="XL7 L7 M7 S7"/>
+    </layoutData>
+            </RadioButtonGroup> 
+  <Label text="Effective Date" >
+  <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+  </Label>
+  
+             <DatePicker placeholder="MM/DD/YYYY" >
+
+       </DatePicker>
+
+        <Label text="City">
+  <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData> 
+  </Label>
+
+  <Input placeholder="Enter City" value="{fgang>/City}" required="true" >
+  </Input>
+
+
+<Label text="State" >
+<layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+  </Label>
+<Input  value="{fgang>/State}" placeholder="Enter State" required="true">
+  </Input>
+
+
+
+<core:Title />
+
+<Label text="WS Rule" >
+<layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+</Label>
+
+<Input  showValueHelp="true" showValueStateMessage="true" placeholder="Enter WS Rule">
+  </Input>
+<Label text="Supervisor"  class="labels1">
+ <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+
+  </Label>
+<Input  value="{fgang>/Assignedsupervisor}" required="true">
+
+  </Input>
+<Label text="Division Engineer" class="labels1">
+<layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+  </Label>
+<Input  value="{fgang>/Divisionengineer}" required="true">
+  </Input>
+
+  <Label text="Position" class="labels1">
+  <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+  </Label>
+<Input value="{fgang>/Positionn}" required="true">
+  </Input>
+
+<core:Title />
+
+<Label text="MWS System Zone" >
+
+<layoutData>
+        <l:GridData span="XL3 L4 M4 S8"/>
+    </layoutData>
+    </Label>
+<CheckBox text="SE"  textAlign="Left" >
+<layoutData>
+        <l:GridData span="XL7 L3 M4 S12"/>
+    </layoutData></CheckBox>
+
+<CheckBox text="NW" textAlign="Left" ></CheckBox>
+<Label >
+</Label>
+<CheckBox text="NP" textAlign="Left" >
+<layoutData>
+        <l:GridData  span="XL7 L3 M4 S12"/>
+    </layoutData></CheckBox>
+<CheckBox text="SW"  textAlign="Left" ><layoutData>
+        <l:GridData  span="XL7 L3 M4 S12"/>
+    </layoutData></CheckBox>
+<Label >
+<layoutData>
+        <l:GridData span="XL7 L4 M4 S12"/>
+    </layoutData></Label>
+<CheckBox text="CR" textAlign="Left" >
+<layoutData>
+        <l:GridData span="XL7 L3 M4 S12"/>
+    </layoutData></CheckBox>
+<CheckBox text="WD" textAlign="Left" ></CheckBox>
+
+
+<Label text="Active MWS SystemZone"  class="sapUiResponsiveMarginTop">
+  <layoutData>
+        <l:GridData  span="XL6 L4 M6 S12"  />
+    </layoutData>
+  </Label>
+ <!-- linebreakM="true" -->
+<Input editable="false" >
+ <layoutData>
+        <l:GridData  span="XL7 L7 M6 S12" />
+    </layoutData>
+  </Input>
+  <Text text="">
+   <layoutData>
+        <l:GridData  span="XL6 L4 M6 S12"/>
+    </layoutData>
+  </Text>
+  <Text text="">
+   <layoutData>
+        <l:GridData  span="XL6 L4 M6 S8"/>
+    </layoutData>
+  </Text>
+<Label text="Division"  >
+  <layoutData>
+        <l:GridData  span="XL2 L3 M4 S8" indent="L1" />
+    </layoutData>
+
+  </Label>
+    <Input value="{fgang>/Division}" required="true">
+     <layoutData>
+        <l:GridData  span="XL2 L7 M4 S8" />
+    </layoutData>
+</Input>
+
+</f:SimpleForm>
+
+
+             
+			</IconTabFilter>
+			<IconTabFilter text="Assigned Supervisor" key="Assigned Supervisor">
+					<Panel expandable="true" headerText="Current Position Data" width="auto"
+           class="custombar1">
+		<VBox>
+<f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="5" labelSpanM="5" labelSpanS="12" editable="true" columnsL="3" columnsM="2"
+				 emptySpanL="0" emptySpanM="0"  emptySpanS="0" adjustLabelSpan="true" >
+    
+<core:Title ></core:Title>
+<Label text="Position Type" >
+<layoutData>
+        <l:GridData span="XL6 L6 M4 S12"/>
+</layoutData>
+                   </Label> 
+<Text text="Permanent"  >  <layoutData>
+        <l:GridData span="XL6 L6 M4 S12"/>
+    </layoutData></Text>
+
+                   <Label text="Union"><layoutData>
+        <l:GridData span="XL6 L6 M4 S12"/>
+    </layoutData></Label>
+                   
+<Text text="BRS" >
+<layoutData>
+        <l:GridData span="XL6 L6 M4 S12"/>
+    </layoutData>
+</Text>
+
+                   <Label text="CDL Qualification"></Label>
+                   <Text text="">
+</Text>
+
+<core:Title ></core:Title>
+<Label text="Agreement"></Label>
+                     <Text text="35-BRS-Agreement-BW">
+                     <layoutData>
+        <l:GridData span="XL6 L6 M4 S12"/>
+    </layoutData>
+                   
+</Text> 
+<Label text="Location">
+                   
+</Label>
+
+            
+                   <Text text="La Porte, IN" textAlign="Begin"> 
+                   <layoutData> 
+        <l:GridData span="XL7 L6 M4 S8"/>
+    </layoutData>
+
+</Text> 
+
+                   <core:Title ></core:Title>
+                   <Label text="Position Title">
+                    <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+                   
+                   </Label>
+                     <Text text="MAINTAINER C,S">
+                   
+</Text>
+                   <Label text="Roster No">
+                   
+                    <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+                   </Label>
+
+                    <Text text="ERN003-CLASS 3 ASST FOREMEN,MAINTAINERS">
+                   
+</Text>
+                    </f:SimpleForm>
+                </VBox>
+                </Panel>
+    <Panel expandable="true" headerText="Current Employee Data" width="auto" 
+    class="custombar1">
+				<VBox>
+<f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="5" labelSpanM="7" labelSpanS="12" editable="true" columnsL="3" columnsM="2"
+				 emptySpanL="0" emptySpanM="0"  emptySpanS="0" adjustLabelSpan="true" >
+    
+<core:Title ></core:Title>
+<Label text="Position Id">
+<!-- <layoutData>
+        <l:GridData span="XL7 L4 M2 S12"/>
+</layoutData> -->
+                   </Label> 
+<Text text="30021084"></Text>
+
+                   <Label text="Union"></Label>
+                   
+<Text text="BRS">
+<layoutData>
+        <l:GridData span="XL6 L6 M4 S8"/>
+    </layoutData>
+</Text>
+
+                   <Label text="Reason"></Label>
+                   <Text text="Manual">
+</Text>
+
+<core:Title ></core:Title>
+<Label text="Position Type"><layoutData>
+        <l:GridData span="XL7 L4 M6 S8"/>
+    </layoutData> </Label>
+                     <Text text="Paramanent">
+                   
+</Text> 
+<Label text="Location"> <layoutData>
+        <l:GridData span="XL7 L4 M6 S8"/>
+    </layoutData>
+                   
+</Label>
+
+            
+                   <Text text="Doraville,GA" textAlign="Initial"> 
+                   <layoutData> 
+        <l:GridData span="XL7 L6 M6 S8"/>
+    </layoutData>
+
+</Text> 
+
+                   
+                   <Label text="Aggrement">
+                   
+                    <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+                   </Label>
+                     <Text text="35-Aggrement-brs-bw" textAlign="Initial"> <layoutData>
+        <l:GridData span="XL7 L6 M4 S8"/>
+    </layoutData>
+                   
+</Text>
+<core:Title ></core:Title>
+                   <Label text="Description">
+                   
+                    <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+                   </Label>
+
+                    <Text text="Signal Maintainer">
+                   
+</Text>
+<Label text="Roster No">
+                   
+                    <layoutData>
+        <l:GridData span="XL7 L4 M4 S8"/>
+    </layoutData>
+                   </Label>
+
+                    <Text text="SLE 403-SIGNAL MEN,MAINTAINERS-SLE">
+                   
+</Text>
+                    </f:SimpleForm> </VBox>
+    </Panel>
+    
+    <Panel expandable="true" headerText="Current Occupant(s)" width="auto" 
+    class="custombar1">
+		<VBox>
+
+    <Table id="occupantTable" inset="true">
+                    <columns>
+                        <Column><Text text="Employee ID"/></Column>
+                        <Column><Text text="Employee Name"/></Column>
+                        <Column><Text text="Type"/></Column>
+                        <Column><Text text="Start Date"/></Column>
+                        <Column><Text text="End Date"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="00182351"/>
+                                <Text text="Hurlbut II, Claude D"/>
+                                <Text text="Permanent"/>
+                                <Text text="07/01/2023"/>
+                                <Text text="12/31/9999"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>                
+                             </VBox>
+
+    
+    
+    
+    
+    </Panel>
+    	</IconTabFilter>
+<IconTabFilter text="Gang ID Grid" key="Gang ID" >
+			
+ <table:Table  rows="{gang>/results}" alternateRowColors="true" id="yourTableId"  rowActionCount="5">
+<table:columns>
+<table:Column>
+<Label text="Gang Id"/>
+<table:template>
+<Text text="{gang>Gangid}"/>
+</table:template>
+</table:Column>
+
+<table:Column>
+<Label text="Description"/>
+<table:template>
+<Text text="{gang>Description}"/>
+</table:template>
+</table:Column>
+
+<table:Column>
+<Label text="Assigned Supervisor"/>
+<table:template>
+<Text text="{gang>Assignedsupervisor}"/>
+</table:template>
+</table:Column>
+
+
+<table:Column>
+<Label text="Division Engineer"/>
+<table:template>
+<Text text="{gang>Divisionengineer}"/>
+</table:template>
+</table:Column>
+
+
+<table:Column>
+<Label text="City"/>
+<table:template>
+<Text text="{gang>City}"/>
+</table:template>
+</table:Column>
+
+
+<table:Column>
+<Label text="State"/>
+<table:template>
+<Text text="{gang>State}"/>
+</table:template>
+</table:Column>
+
+
+<table:Column>
+<Label text="Division"/>
+<table:template>
+<Text text="{gang>Division}"/>
+</table:template>
+</table:Column>
+
+
+<table:Column>
+<Label text="Position"/>
+<table:template>
+<Text text="{gang>Positionn}"/>
+</table:template>
+</table:Column>
+
+</table:columns>
+</table:Table> 
+    
+    	</IconTabFilter>
+      	<IconTabFilter text="Responsive Layout" key="Description">
+            
+<f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="5" labelSpanS="8" editable="true" columnsL="3" columnsM="2" columnsXL="3"
+				 emptySpanL="0" emptySpanM="0"  emptySpanS="0" adjustLabelSpan="true" >
+  <core:Title />         
+		<Label text="Gang   Description" required="true">
+		
+</Label>
+<TextArea placeholder="Enter Gang Description" value="{gang>Description}">
+
+
+</TextArea>
+<Label text="Gang Type" required="true">
+  </Label>
+<Select valueState="None" valueStateText="Select Gang Type"  >
+
+</Select>
+  
+
+<Label text="Gang Classification"  >
+</Label>
+<RadioButtonGroup>
+                <buttons>
+                    <RadioButton text="Fixed Headquarter" enabled="true"/>
+                    <RadioButton text="Mobile"/>
+                </buttons>
+            </RadioButtonGroup> 
+  <Label text="Effective Date" >
+  </Label>
+  
+             <DatePicker placeholder="MM/DD/YYYY" >
+
+       </DatePicker>
+
+        <Label text="City">
+  </Label>
+
+  <Input placeholder="Enter City" >
+  </Input>
+
+
+<Label text="State" >
+  </Label>
+<ComboBox 
+        items="{gang>/results}" 
+        selectedKey="{gang>State}" 
+         width="100%" placeholder="Select State">
+        <core:Item key="{gang>State}" text="{gang>State}" />
+ </ComboBox>
+<core:Title />
+
+<Label text="WS Rule" >
+</Label>
+
+<Input  showValueHelp="true" showValueStateMessage="true" placeholder="Enter WS Rule">
+  </Input>
+<Label text="Shift Timings"  class="labels1">
+
+  </Label>
+<Input  editable="false">
+
+  </Input>
+<Label text="Rest Days" class="labels1">
+  </Label>
+<Input  editable="false">
+  </Input>
+
+  <Label text="Position" class="labels1">
+  </Label>
+<Input  value="{gang>/Positionn}" required="true">
+  </Input>
+</f:SimpleForm>
+			</IconTabFilter>
+		
+		</items>
+	</IconTabBar>
+  
+    </content>
+
+	 <footer>
+ <OverflowToolbar id="otbFooter">
+<ToolbarSpacer/>
+ <Button type="Reject" text="CANCEL" press = "oncancel"/>
+
+ <Button type="Success" text="SAVE" press = "oncreate"/>
+ </OverflowToolbar>
+ </footer>
+    </Page>
+    </pages>
+    </App>
+</mvc:View>

@@ -1,0 +1,184 @@
+.title{
+text-align: center;
+}
+
+
+
+
+.sapUiMedia-Std-Desktop .sapUiResponsiveContentPadding.sapMITH {
+    padding: 0 3rem;
+    /* background-color: transparent; */
+    border: solid 0.01rem;
+    /* border: transparent; */
+    border-left: none;
+    border-right: none;
+}
+
+.custombar1 {
+    
+    /* background: aquamarine; */
+  
+   
+   
+    /* background-color: transparent ; */
+        filter: none;
+      
+        border: solid 0.01rem;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        
+  
+
+}
+
+.sapUiMedia-Std-Tablet .sapMITH, .sapUiMedia-Std-Desktop .sapMITH {
+    padding: 0 2rem;
+    border: solid 0.01rem;
+    border-left: none;
+    border-right: none;
+}
+
+.sapMITBContent {
+    border-bottom: 0rem solid var(--sapObjectHeader_BorderColor);
+}
+
+.sapMBarRight.sapMBarContainer>*:first-child:last-child, .sapMBar .sapMBarLeft.sapMBarContainer>*:first-child:last-child, .sapMBar .sapMBarMiddle .sapMBarContainer>*:first-child:last-child {
+    margin: 35rem;
+    /* background-color: transparent; */
+}
+
+.custombar2 {
+    
+        /* background: aquamarine; */
+      
+        /* background-color: transparent ; */
+        filter: none;
+      
+        border: solid 0.01rem;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        
+        /* border-top: transparent; */
+        
+    
+}
+
+.iconbar{
+    padding: 0;
+}
+
+@media (min-width: 1024px) {
+    .sapMSplitContainerHideMode>.sapMSplitContainerDetail .sapMITB.sapUiResponsiveContentPadding > .sapMITBContainerContent > .sapMITBContent, .sapMITB.sapUiResponsiveContentPadding > .sapMITBContainerContent > .sapMITBContent {
+        padding: 0rem 2rem;
+        box-sizing: border-box;
+        
+    }
+}
+
+.customtable {
+    
+    /* background: aquamarine; */
+  
+    /* background-color: transparent ; */
+    filter: none;
+  padding-left: 0;
+  
+    border: solid 0.01rem;
+    border-left-color: transparent;
+        border-right-color: transparent;
+        border-top: transparent;
+
+    
+
+}
+
+
+
+.sapMListInsetBG {
+    padding: 0rem;
+}
+
+.sapMTableTH {
+    /* background: transparent; */
+    border-bottom: solid 0.01rem;
+    vertical-align: middle;
+}
+
+
+html.sap-desktop .sapMIBar.sapMFooter-CTX {
+    /* background-color: var(--sapPageFooter_Background);
+    border-top: 1px solid var(--sapPageFooter_BorderColor); */
+    border-top: solid 0.01rem;
+    
+    /* border-bottom: none;
+    border-left: none;
+    border-right: none; */
+}
+
+
+.columns{
+	min-height: 20px;
+}
+element.style {
+    justify-content: flex-start;
+}
+element.style {
+    text-align: left;
+    width: 100%;
+   
+}
+.element {
+    text-align: left  !important; 
+    width: 100%;
+   
+} 
+
+.text {
+    text-align: right  !important; 
+    width: 100%;
+   
+} 
+.sapUiFormLabel {
+    vertical-align: middle; /* Adjust as needed */
+}
+
+
+.labels1{
+    display: inline-flex
+;
+    align-items: flex-end;
+    justify-content: right !important; 
+}
+/* 
+.labels2{
+    display: inline-flex
+    ;
+        align-items: flex-start;
+        justify-content: flex-start !important;
+        /* align-items: flex-start; */
+
+/* } */ */
+.sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 2rem;
+}
+
+.sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 1%;
+    line-height: 1rem;
+    white-space-collapse: collapse;
+}
+
+
+.sapUiFormLblColon td:not(.sapUiGridLabelFull).sapUiFormElementLbl>.sapMLabel .sapMLabelInner, .sapUiFormLblColon .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>:not(.sapUiRespGridSpanS12).sapUiFormElementLbl>.sapMLabel .sapMLabelInner, .sapUiFormLblColon .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>:not(.sapUiRespGridSpanM12).sapUiFormElementLbl>.sapMLabel .sapMLabelInner, .sapUiFormLblColon .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>:not(.sapUiRespGridSpanL12).sapUiFormElementLbl>.sapMLabel .sapMLabelInner, .sapUiFormLblColon .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>:not(.sapUiRespGridSpanXL12).sapUiFormElementLbl>.sapMLabel .sapMLabelInner, .sapUiFormLblColon .sapUiFormResLayout .sapUiRFLRow:first-child>.sapUiRFLContainer:first-child:not(.sapUiRFLFullLength)>.sapUiRFLContainerContent.sapUiFormElementLbl>.sapMLabel .sapMLabelInner, .sapUiFormLblColon .sapUiFormCL.sapUiFormCLSmallColumns :not(.sapUiFormCLCellsS12).sapUiFormElementLbl>.sapMLabel .sapMLabelInner, .sapUiFormLblColon .sapUiFormCL.sapUiFormCLWideColumns :not(.sapUiFormCLCellsL12).sapUiFormElementLbl>.sapMLabel .sapMLabelInner {
+    display: inline-flex
+;
+    align-items: flex-end;
+    justify-content: flex-start !important;
+}
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0em !important;
+    line-height: 2rem;
+}
